@@ -1,254 +1,199 @@
-<!DOCTYPE html>
+write one paragraph describing this code and its features <!DOCTYPE html> 
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fresh Bites Restaurant</title>
+    <meta charset="UTF-8">
+    <title>Our Restaurant Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-<style>
-:root {
-    --primary: #c0392b;
-    --dark: #222;
-    --light: #ffffff;
-    --bg: #f4f4f4;
-}
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: var(--bg);
-    color: #333;
-    transition: 0.3s;
-}
+        header {
+            background-color: #c0392b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-.dark {
-    --bg: #111;
-    --light: #1e1e1e;
-    color: white;
-}
+        nav {
+            background-color: #2c3e50;
+            padding: 10px;
+            text-align: center;
+        }
 
-header {
-    background: url('https://images.unsplash.com/photo-1555992336-03a23c48f4de') center/cover no-repeat;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
 
-header h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
-}
+        nav a:hover {
+            color: #f39c12;
+        }
 
-header button {
-    padding: 12px 25px;
-    border: none;
-    background: var(--primary);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+        section {
+            padding: 30px;
+        }
 
-nav {
-    background: var(--dark);
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
+        h2 {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #c0392b;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
+        .menu-items {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
 
-.menu-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+        .card:hover {
+            transform: scale(1.05);
+        }
 
-.card {
-    background: var(--light);
-    width: 250px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
 
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-}
+        table {
+            width: 50%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
 
-.card button {
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
 
-input[type="text"] {
-    padding: 10px;
-    width: 250px;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
+        th {
+            background-color: #c0392b;
+            color: white;
+        }
 
-.cart {
-    background: var(--light);
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 10px;
-    display: inline-block;
-}
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: white;
+        }
 
-.dark-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 8px 12px;
-    cursor: pointer;
-    background: black;
-    color: white;
-    border-radius: 5px;
-}
+        @media (max-width: 768px) {
+            .menu-items {
+                justify-content: center;
+            }
 
-footer {
-    background: var(--dark);
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-@media (max-width:768px){
-    header h1 {font-size: 30px;}
-}
-</style>
+            table {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="dark-toggle" onclick="toggleDark()">🌙</div>
-
 <header>
-    <h1>Fresh Bites</h1>
-    <p>Delicious Food Made With Love</p>
-    <button onclick="scrollToMenu()">View Menu</button>
+    🍽️ Our Restaurant Menu
 </header>
 
 <nav>
-    <a href="#menu">Menu</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#appetizers">Appetizers</a>
+    <a href="#sandwiches">Sandwiches</a>
+    <a href="#prices">Prices</a>
+    <a href="Details.html">Location</a>
 </nav>
 
-<section id="menu">
-    <h2>Our Menu</h2>
-    <input type="text" id="search" placeholder="Search food..." onkeyup="searchFood()">
+<section id="appetizers">
+    <h2>Appetizers</h2>
+    <div class="menu-items">
 
-    <div class="menu-container" id="menuItems">
-        <div class="card" data-name="burger">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
-            <h3>Cheese Burger</h3>
-            <p>$8</p>
-            <button onclick="addToCart(8)">Add to Cart</button>
+        <div class="card">
+            <h3>Chicken Wings</h3>
+            <img src="wings.jpeg" alt="Chicken Wings">
+            <p>$7.50</p>
         </div>
 
-        <div class="card" data-name="pizza">
-            <img src="https://images.unsplash.com/photo-1548365328-9f547fb0953d">
-            <h3>Italian Pizza</h3>
-            <p>$10</p>
-            <button onclick="addToCart(10)">Add to Cart</button>
+        <div class="card">
+            <h3>Mozzarella Sticks</h3>
+            <img src="sticks.jpeg" alt="Mozzarella Sticks">
+            <p>$7.50</p>
         </div>
 
-        <div class="card" data-name="salad">
-            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
-            <h3>Fresh Salad</h3>
-            <p>$6</p>
-            <button onclick="addToCart(6)">Add to Cart</button>
+        <div class="card">
+            <h3>Caesar Salad</h3>
+            <img src="Caesar.jpg" alt="Caesar Salad">
+            <p>$6.00</p>
         </div>
-    </div>
 
-    <div class="cart">
-        <h3>🛒 Cart Total: $<span id="total">0</span></h3>
-        <button onclick="clearCart()">Clear Cart</button>
     </div>
 </section>
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>We are passionate about delivering high quality meals made from fresh ingredients. Our mission is to create a memorable dining experience for every customer.</p>
+<section id="sandwiches">
+    <h2>Sandwiches</h2>
+    <ul>
+        <li>Philly Steak - $9.00</li>
+        <li>Cheese Burger - $8.00</li>
+        <li>Chicken Burger - $8.50</li>
+    </ul>
 </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <form onsubmit="event.preventDefault(); alert('Message Sent!');">
-        <input type="text" placeholder="Your Name" required><br><br>
-        <input type="text" placeholder="Your Email" required><br><br>
-        <textarea placeholder="Your Message" required style="width:250px;height:100px;"></textarea><br><br>
-        <button type="submit">Send Message</button>
-    </form>
+<section id="prices">
+    <h2>Price Table</h2>
+
+    <table>
+        <tr>
+            <th>Dish</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Mozzarella Sticks</td>
+            <td>$7.50</td>
+        </tr>
+        <tr>
+            <td>Chicken Wings</td>
+            <td>$7.50</td>
+        </tr>
+        <tr>
+            <td>Caesar Salad</td>
+            <td>$6.00</td>
+        </tr>
+    </table>
 </section>
 
 <footer>
-    © 2026 Fresh Bites Restaurant | All Rights Reserved
+    © 2026 Our Restaurant | Fresh Food Daily
 </footer>
-
-<script>
-let total = localStorage.getItem("cartTotal") ? parseFloat(localStorage.getItem("cartTotal")) : 0;
-document.getElementById("total").innerText = total;
-
-function addToCart(price){
-    total += price;
-    document.getElementById("total").innerText = total;
-    localStorage.setItem("cartTotal", total);
-}
-
-function clearCart(){
-    total = 0;
-    document.getElementById("total").innerText = total;
-    localStorage.removeItem("cartTotal");
-}
-
-function toggleDark(){
-    document.body.classList.toggle("dark");
-}
-
-function searchFood(){
-    let input = document.getElementById("search").value.toLowerCase();
-    let cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-        let name = card.getAttribute("data-name");
-        card.style.display = name.includes(input) ? "block" : "none";
-    });
-}
-
-function scrollToMenu(){
-    document.getElementById("menu").scrollIntoView({behavior: "smooth"});
-}
-</script>
 
 </body>
 </html>
